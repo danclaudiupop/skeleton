@@ -1,0 +1,7 @@
+{% extends 'index.html' %}
+{% block title %}Posts in category {{ category|striptags }} | {{ super() }}{% endblock title %}
+{% block pagetitle %}
+<div class="container">
+    <h5 class="content-subhead">Posts in category '{{ category }}'</h5>
+</div>
+{% endblock pagetitle %}

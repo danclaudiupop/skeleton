@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% block pagetitle %}
+{% endblock pagetitle %}
+<div class="container">
+    {% for article in articles_page.object_list %}
+    <section class="post">
+        <header class="post-header">
+            <h5><a class="post-title" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h5>
+                <p class="post-meta">
+                    in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> &middot; {{ article.locale_date }}
+                </p>
+        </header>
+    </section>
+    {% endfor %}
+    {% include 'pagination.html' %}
+    {% include 'footer.html' %}
+</div>
+{% endblock content %}
